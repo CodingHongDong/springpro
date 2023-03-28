@@ -18,9 +18,9 @@ import kr.board.mapper.BoardMapper;
 @Controller
 public class BoardController {
 
-	@GetMapping("/")
+	@GetMapping("/boardMain.do")
 	public String main() {
-		return "main";
+		return "board/main";
 	}
 	
 	
