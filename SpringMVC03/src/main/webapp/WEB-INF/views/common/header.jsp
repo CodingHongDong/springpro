@@ -25,7 +25,7 @@
 	        <li class="dropdown">
 	          <a class="dropdown-toggle" data-toggle="dropdown" href="#">접속하기<span class="caret"></span></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="#">로그인</a></li>
+	            <li><a href="${contextPath}/memLoginForm.do">로그인</a></li>
 	            <li><a href="${contextPath}/memJoin.do">회원가입</a></li>
 	          </ul>
 	        </li>
@@ -38,7 +38,7 @@
 	          <ul class="dropdown-menu">
 	            <li><a href="#">회원정보수정</a></li>
 	            <li><a href="#">프로필사진등록</a></li>
-	            <li><a href="#">로그아웃</a></li>
+	            <li><a href="${contextPath}/memLogout.do">로그아웃</a></li>
 	          </ul>
 	        </li>
 	      </ul>
