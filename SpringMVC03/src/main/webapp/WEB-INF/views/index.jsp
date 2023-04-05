@@ -31,14 +31,46 @@ $(document).ready(function() {
   	<h2>Spring MVC03</h2>
   </c:if>
   <c:if test="${!empty mvo}">
+  	<c:if test="${mvo.memProfile eq ''}">
+  		<img src="${contextPath}/resources/images/person.png" style="width: 50px; height: 50px;">
+  	</c:if>
+  	<c:if test="${mvo.memProfile ne ''}">
+  		<img src="${contextPath}/resources/upload/${mvo.memProfile}" style="width: 50px; height: 50px;">
+  	</c:if>
   	<label>${mvo.memName}님 방문을 환영합니다.</label>
   </c:if>
   
-  <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).
-  <p>Only when the button is clicked, the navigation bar will be displayed.</p>
+  <div class="panel panel-default">
+    <div>
+    	<img src="${contextPath}/resources/images/exercise.jpg" style="width: 100%; height: 400px"/>
+    </div>
+    <div class="panel-body">
+    	<ul class="nav nav-tabs">
+		  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+		  <li><a data-toggle="tab" href="#menu1">게시판</a></li>
+		  <li><a data-toggle="tab" href="#menu2">공지사항</a></li>
+		</ul>
+		<div class="tab-content">
+		  <div id="home" class="tab-pane fade in active">
+		    <h3>HOME</h3>
+		    <p>Some content.</p>
+		  </div>
+		  <div id="menu1" class="tab-pane fade">
+		    <h3>게시판</h3>
+		    <p>Some content in menu 1.</p>
+		  </div>
+		  <div id="menu2" class="tab-pane fade">
+		    <h3>공지사항</h3>
+		    <p>Some content in menu 2.</p>
+		  </div>
+		</div>
+    </div>
+    <div class="panel-footer">CodingHongDong</div>
+  </div>
+  
 </div>
 
-<!-- modal(회원가입 성공) -->
+<!-- modal(회원가입, 회원수정 성공) -->
 <div id="myMessage" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
