@@ -8,10 +8,6 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 // web.xml
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer{
 
-	
-	
-	
-
 	@Override
 	protected Filter[] getServletFilters() {
 		CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
@@ -23,7 +19,7 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-		return new Class[]{RootConfig.class};
+		return new Class[] { RootConfig.class, SecurityConfig.class};
 	}
 
 	@Override
@@ -37,5 +33,5 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 		// TODO Auto-generated method stub
 		return new String[] {"/"};
 	}
-
+	
 }
