@@ -138,7 +138,8 @@ public class MemberController {
 		if(result == 1) { // 수정성공 메세지
 			rttr.addFlashAttribute("msgType", "성공 메세지");
 			rttr.addFlashAttribute("msg", "회원정보 수정 성공 !");
-			session.setAttribute("mvo", m);
+			Member mvo = memberMapper.getMember(m.getMemID());
+			session.setAttribute("mvo", mvo);
 			return "redirect:/";
 		} else {
 			rttr.addFlashAttribute("msgType", "실패 메세지");
@@ -176,7 +177,7 @@ public class MemberController {
 		if(file != null) {
 			String ext = file.getName().substring(file.getName().lastIndexOf(".") + 1);
 			ext = ext.toUpperCase();
-			if(ext.equals("PNG") || ext.equals("GIF") || ext.equals("JPG")) {
+			if(ext.equals("PNG") || ext.equals("GIF") || ext.equals("JPG") || ext.equals("JPEG")) {
 				// 새로 업로도된 이미지(new), 현재 DB에 있는 이미지(old)
 				String oldProfile = memberMapper.getMember(memID).getMemProfile();
 				File oldFile = new File(savePath + "/" + oldProfile);

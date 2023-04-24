@@ -18,7 +18,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		filter.setForceEncoding(true);
 		http.addFilterBefore(filter, CsrfFilter.class);
 	}
-
-	
-	
 }

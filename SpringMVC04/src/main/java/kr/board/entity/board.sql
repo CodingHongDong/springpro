@@ -35,3 +35,4 @@ create table mem_tbl(
 
 
 select * from mem_tbl
+insert into mem_tbl(memID, memPassword, memName, memGender, memEmail) value ('hong', '1111', 'hong', '남자', 'hong@hong.com')
