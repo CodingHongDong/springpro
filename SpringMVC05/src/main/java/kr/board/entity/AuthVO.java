@@ -3,7 +3,7 @@ package kr.board.entity;
 import lombok.Data;
 
 @Data
-public class authVO {
+public class AuthVO {
 
 	private int no ; // 일련번호
 	private String memID ; // 회원 아이디

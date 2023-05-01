@@ -2,6 +2,7 @@ package kr.board.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import kr.board.entity.AuthVO;
 import kr.board.entity.Member;
 
 @Mapper
@@ -13,4 +14,5 @@ public interface MemberMapper {
 	public int memUpdate(Member mvo); // 회원정보수정
 	public Member getMember(String memID);
 	public void memProfileUpdate(Member mvo);
+	public void authInsert(AuthVO authVO);
 }

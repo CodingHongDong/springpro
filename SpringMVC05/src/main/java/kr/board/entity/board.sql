@@ -13,7 +13,7 @@ create table myboard
 create table mem_stbl(
 	memIdx int not null,
 	memID varchar(20) not null,
-	memPasswrod varchar(68) not null,
+	memPassword varchar(68) not null,
 	memName varchar(20) not null,
 	memAge int,
 	memGender varchar(20),
@@ -21,6 +21,10 @@ create table mem_stbl(
 	memProfile varchar(50),
 	primary key(memID)
 );
+
+alter table mem_stbl change memPasswrod memPassword varchar(68) not null
+
+delete from mem_stbl where memID = 'test'
 
 select * from mem_stbl
 
@@ -33,3 +37,4 @@ create table mem_auth(
 );
 
 select * from mem_auth
+delete from mem_auth where memID = 'test'

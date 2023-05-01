@@ -15,6 +15,6 @@ public class Member {
 	private String memGender;
 	private String memEmail;
 	private String memProfile;
-	private List<authVO> authList;
+	private List<AuthVO> authList;
 	
 }
