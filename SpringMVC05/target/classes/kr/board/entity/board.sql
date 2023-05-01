@@ -10,6 +10,8 @@ create table myboard
 	primary key(idx) 
 );
 
+select * from myboard;
+
 create table mem_stbl(
 	memIdx int not null,
 	memID varchar(20) not null,

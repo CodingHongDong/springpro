@@ -15,4 +15,5 @@ public interface MemberMapper {
 	public Member getMember(String memID);
 	public void memProfileUpdate(Member mvo);
 	public void authInsert(AuthVO authVO);
+	public void authDelete(String memID);
 }

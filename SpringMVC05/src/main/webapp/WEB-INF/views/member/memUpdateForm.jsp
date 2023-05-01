@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Spring MVC03</title>
+  <title>Spring MVC05</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -94,6 +94,35 @@
     				<td style="width: 110px; vertical-align: middle;">이메일</td>
     				<td colspan="2"><input class="form-control" type="email" id="memEmail" name="memEmail" maxlength="20" value="${mvo.memEmail}"></td>
     			</tr>
+    			
+    			<!-- 선택한 권한 출력하기 -->
+    			<tr>
+    				<td style="width: 110px; vertical-align: middle;">사용자 권한</td>
+    				<td colspan="2">
+    					<input type="checkbox" name="authList[0].auth" value="ROLE_USER" 
+    						<c:forEach var="authVO" items="${mvo.authList}">
+    							<c:if test="${authVO.auth eq 'ROLE_USER'}">
+    								checked
+    							</c:if>
+    						</c:forEach>
+    					/> ROLE_USER
+    					<input type="checkbox" name="authList[1].auth" value="ROLE_MANAGER"
+    						<c:forEach var="authVO" items="${mvo.authList}">
+    							<c:if test="${authVO.auth eq 'ROLE_MANAGER'}">
+    								checked
+    							</c:if>
+    						</c:forEach>
+    					/> ROLE_MANAGER
+    					<input type="checkbox" name="authList[2].auth" value="ROLE_ADMIN"
+    						<c:forEach var="authVO" items="${mvo.authList}">
+    							<c:if test="${authVO.auth eq 'ROLE_ADMIN'}">
+    								checked
+    							</c:if>
+    						</c:forEach>
+    					/> ROLE_ADMIN
+    				</td>
+    			</tr>
+    			
     			<tr>
     				<td colspan="3" style="text-align: left;">
     					<span id="passMessage" style="color: red;"></span><input type="button" class="btn btn-info btn-sm pull-right" value="수정" onclick="goUpdate()"/>
